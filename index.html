@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form method="post">
+        <div class="actions"><input type="submit" name="commit" value="Submit"></div>
+        <input type="file">
+    </form>
+    
+    <script>
+        (function () {
+            const formList = document.getElementsByTagName("form");
+            let form = undefined;
+            let inputFile = undefined;
+            if (formList.length > 1) {
+                alert("more than 1 form");
+                return;
+            } 
+
+            form = formList[0];
+            const inputList = Array.from(form.getElementsByTagName("input")).filter(i => i.type == "file");
+            if (inputList > 1) {
+                alert("more than 1 inout file");
+                return;
+            } 
+            
+            inputFile = inputList[0];
+
+            window.addEventListener('paste', e => {
+                inputFile.files = e.clipboardData.files;
+            });
+        })();
+
+    </script>
+</body>
+</html>
