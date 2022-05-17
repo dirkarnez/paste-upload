@@ -1,0 +1,19 @@
+{
+  "name": "Paste Upload",
+  "description" : "Paste Upload",
+  "icons": { 
+    "16": "icon.png",
+    "48": "icon.png",
+   "128": "icon.png" 
+  },
+  "action": {},
+  "manifest_version": 3,
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
